@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourism - Siddhivinayak Temple</title>
+  <link rel="stylesheet" href="temp.css">
+</head>
+
+<body>
+<header class="head1">
+  <div class="logo">
+    <a href="#"><img src="logo1.jpg" alt="Logo"></a>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search...">
+    <button type="submit">🔍</button>
+  </div>
+
+  <nav class="nav1">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#">Destination</a></li>
+      <li><a href="login.html">Sign In</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="cart" onclick="toggleCart()" style="cursor:pointer; position:relative;"> 🛒
+    <span id="cart-count">0</span>
+  </div>
+
+  <div id="cart-box" style="display:none; position:absolute; top:80px; right:20px; background:white; padding:20px; box-shadow:0 0 10px rgba(0,0,0,0.3); border-radius:10px; z-index:100;">
+    <h3>Cart Items:</h3>
+    <ul id="cart-items"></ul>
+    <p>Total: ₹<span id="cart-total">0</span></p>
+    <button onclick="placeOrder()" style="margin-top:10px; background:orange; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">Place Order</button>
+  </div>
+</header>
+
+<main>
+  <h1 class="main-title">MARUTI MANDIR</h1>
+  <h2 class="sub-title">RATNAGIRI</h2>
+
+  <div class="main-image">
+    <img src="bm1.webp" alt=MARUTI MANDIR" class="img">
+  </div>
+
+  <section class="about-section">
+    <h3 class="section-title">ABOUT</h3>
+    <p>
+           aruti Mandir is one of the popular localities near Ratnagiri, known for its multistorey apartments available for sale. The average price for these flats is around 22.4 Lac, with a median price of 19 Lac. It's a sought-after area for those looking to buy property in this region.
+                <br><br>
+             Maruti Mandir is one of the localities in Ratnagiri. The pincode of this locality is 415612. This locality is near State Bank Colony, Udyamnagar and Hayat Nagar. This locality has 4 properties to buy. The residents of Maruti Mandir rated this locality at 4/5 in terms of connectivity, whereas for safety, they rated it 3.8/5.
+                <br><br>
+            Infrastructure
+Presence of Shree Ramnath Hospital, Lotalikar Hospital, Sushrut Surgical and Maternity Hospital speak of sound healthcare infrastructure in & around the area.
+            </p>
+
+  </section>
+
+  <section class="gallery-section">
+    <h3 class="section-title">Gallery</h3>
+    <div class="gallery-images">
+      <img src="bm2.jpg" alt="Gallery Image 1" class="gallery-img">
+      <video class="gallery-img" src="bm2.mp4" autoplay loop muted></video>
+      <video class="gallery-img" src="bm1.mp4" autoplay loop muted></video>
+      <img src="bm3.jpg" alt="Gallery Image 4" class="gallery-img">
+    </div>
+  </section>
+
+  <section>
+    <h1 class="section-title">Explore Nearby Places</h1>
+    <div class="places-container">
+
+      <div class="place">
+        <h2 id="activity-line-1">Swayambhu Ganapati Temple</h2>
+        <img id="activity-img-1" src="g1.jpeg" alt="Swayambhu Ganapati Temple">
+      </div>
+
+      <div class="place">
+        <h2 id="activity-line-2">Ratnadurga Fort</h2>
+        <img id="activity-img-2" src="rd.jpg" alt="Ratnadurga Fort">
+      </div>
+
+      <div class="place">
+        <h2 id="activity-line-3">Kunkeshwar Beach</h2>
+        <img id="activity-img-3" src="k1.jpg" alt="Kunkeshwar Beach">
+      </div>
+<script>
+    // First Place Slideshow
+    const activities1 = [
+      { text: "Swayambhu Ganapati Temple", img: "g1.jpeg" },
+      { text: "Swayambhu Ganapati Temple", img: "g2.jpg" },
+      { text: "Swayambhu Ganapati Temple", img: "g3.jpg" },
+	 { text: "Swayambhu Ganapati Temple", img: "g4.jpg" }
+    ];
+    let index1 = 0;
+    function showActivity1() {
+      document.getElementById('activity-line-1').innerText = activities1[index1].text;
+      document.getElementById('activity-img-1').src = activities1[index1].img;
+      index1 = (index1 + 1) % activities1.length;
+      setTimeout(showActivity1, 3000);
+    }
+    showActivity1();
+
+    // Second Place Slideshow
+    const activities2 = [
+      { text: "Ratnadurga Fort", img: "rd1.jpg" },
+      { text: "Ratnadurga Fort", img: "rd2.jpg" },
+      { text: "Ratnadurga Fort", img: "rd3.jpg" },
+      { text: "Ratnadurga Fort", img: "rd4.jpg" }
+    ];
+    let index2 = 0;
+    function showActivity2() {
+      document.getElementById('activity-line-2').innerText = activities2[index2].text;
+      document.getElementById('activity-img-2').src = activities2[index2].img;
+      index2 = (index2 + 1) % activities2.length;
+      setTimeout(showActivity2, 3000);
+    }
+    showActivity2();
+
+    // Third Place Slideshow
+    const activities3 = [
+      { text: "Kunkeshwar Beach", img: "k1.jpg" },
+      { text: "Kunkeshwar Beach", img: "k2.jpg" },
+      { text: "Kunkeshwar Beach", img: "k3.jpg" },
+      { text: "Kunkeshwar Beach", img: "k4.jpg" },
+      { text: "Kunkeshwar Beach", img: "k5.jpg" }
+    ];
+    let index3 = 0;
+    function showActivity3() {
+      document.getElementById('activity-line-3').innerText = activities3[index3].text;
+      document.getElementById('activity-img-3').src = activities3[index3].img;
+      index3 = (index3 + 1) % activities3.length;
+      setTimeout(showActivity3, 3000);
+    }
+    showActivity3();
+  </script>
+    </div>
+  </section>
+
+  <section class="products">
+    <section class="product-section">
+      <h3 class="section-title">Top Products To Buy</h3>
+
+      <div class="product-gallery">
+
+        <div class="product-card">
+          <a href="#"><img src="hapus.jpg" alt="Mangoes (Hapus)"></a>
+          <h4>Mangoes (Hapus)</h4>
+          <p>considered some of the best mangoes in India. </p>
+          <p><b>Price:</b> ₹2,000 per dozen</p>
+          <button class="but"  onclick="addToCart('Mangoes ', 2000)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <a href="#"><img src="kokam.jpg" alt="Kokum Products"></a>
+          <h4>Kokum Products</h4>
+          <p> a fruit native to the Konkan region used in local cuisine for its sour flavor
+
+</p>
+          <p><b>Price:</b>₹500.</p>
+          <button class="but" onclick="addToCart('Kokum Products', 500)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <a href="#"><img src="wa.avif" alt=" Wooden Handicrafts"></a>
+          <h4> Wooden Handicrafts</h4>
+          <p>Local artisans create wooden carvings, Lord Ganesha, and traditional motifs.</p>
+          <p><b>Price:</b> ₹5,000</p>
+          <button class="but" onclick="addToCart('Wooden Handicrafts', 5000)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <a href="#"><img src="ca.avif" alt="Artifacts"></a>
+          <h4> Artifacts</h4>
+          <p>offers a range of shell products and coastal articrafts. </p>
+          <p><b>Price:</b>₹1,500.</p>
+          <button class="but" onclick="addToCart('Artifacts ',1500)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <a href="#"><img src="handwoll.webp" alt="Local Handloom Products"></a>
+          <h4>Local Handloom Products</h4>
+          <p>Cotton scarves, tablecloths, and bedsheets with traditional Konkan patterns.
+
+
+
+</p>
+          <p><b>Price:</b>₹3,000 </p>
+          <button class="but" onclick="addToCart('Handloom Products',3000)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <a href="#"><img src="rw.webp" alt="Ratnagiri Rosewood Products"></a>
+          <h4>Ratnagiri Rosewood Products</h4>
+          <p>a type of wood found in the region, is used for crafting beautiful furniture.</p>
+          <p><b>Price:</b> ₹3,000</p>
+          <button class="but" onclick="addToCart('Rosewood',3000)">Buy</button>
+        </div>
+
+      </div>
+    </section>
+  </section>
+
+  <footer>
+    © 2025 Maharashtra Temples. All Rights Reserved.
+  </footer>
+
+</main>
+
+<!-- Cart Functionality Script -->
+<!-- Simple Popup Form -->
+<div id="order-form" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:white; padding:15px; border:1px solid black; border-radius:8px; z-index:1000; width:250px;">
+  <h3>Order Details</h3>
+  <form id="form">
+    <input type="text" id="name" placeholder="Name" required style="margin:5px 0; padding:5px; width:100%;">
+    <input type="text" id="address" placeholder="Address" required style="margin:5px 0; padding:5px; width:100%;">
+    <input type="text" id="phone" placeholder="Phone Number" required style="margin:5px 0; padding:5px; width:100%;">
+    <br><br>
+    <button type="submit" style="padding:5px 15px;">Submit</button>
+    <button type="button" onclick="closeForm()" style="padding:5px 15px; margin-left:10px;">Cancel</button>
+  </form>
+</div>
+
+<script>
+let cartItems = [];
+
+function addToCart(productName, price) {
+  cartItems.push({ name: productName, price: price });
+  updateCart();
+}
+
+function updateCart() {
+  const cartList = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  const cartCount = document.getElementById('cart-count');
+
+  cartList.innerHTML = '';
+
+  let total = 0;
+  cartItems.forEach((item, index) => {
+    let li = document.createElement('li');
+    li.innerHTML = `${item.name} - ₹${item.price} 
+      <button onclick="removeFromCart(${index})" style="margin-left:10px; background:red; color:white; border:none; padding:2px 8px; border-radius:5px; cursor:pointer;">X</button>`;
+    cartList.appendChild(li);
+    total += item.price;
+  });
+
+  cartTotal.innerText = total;
+  cartCount.innerText = cartItems.length;
+}
+
+function placeOrder() {
+  if (cartItems.length === 0) {
+    alert('Cart is empty! Please add products.');
+    return;
+  }
+    document.getElementById('order-form').style.display = 'block';
+}
+
+function closeForm() {
+  document.getElementById('order-form').style.display = 'none';
+}
+
+document.getElementById('form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  let name = document.getElementById('name').value.trim();
+  let address = document.getElementById('address').value.trim();
+  let phone = document.getElementById('phone').value.trim();
+
+  if (name.length < 2 || address.length < 5 || phone.length !== 10 || isNaN(phone)) {
+    alert('Please enter valid Name, Address and 10-digit Phone.');
+    return;
+  }
+
+  alert(`Thank you ${name}! Your order is placed.`);
+  cartItems = [];
+  updateCart();
+  closeForm();
+  toggleCart();
+});
+
+
+let cartVisible = false;
+function toggleCart() {
+  cartVisible = !cartVisible;
+  document.getElementById('cart-box').style.display = cartVisible ? 'block' : 'none';
+}
+function removeFromCart(index) {
+  cartItems.splice(index, 1); // Remove item from array
+  updateCart(); // Refresh the cart display
+}
+
+</script>
+
+</body>
+</html>

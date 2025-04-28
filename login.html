@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Javascript Validation Program</title>
+
+<style>
+    body {
+        background: linear-gradient(120deg, #74ebd5, #acb6e5);
+        font-family: 'Poppins', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    form {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 30px 40px;
+        border-radius: 20px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        animation: fadeSlide 1s ease forwards;
+        width: 100%;
+        max-width: 450px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"], input[type="tel"], input[type="email"], input[type="password"], textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0 20px 0;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        outline: none;
+        transition: all 0.4s ease;
+        font-size: 16px;
+        background: #f9f9f9;
+    }
+
+    input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
+        border-color: #6a11cb;
+        box-shadow: 0 0 8px #6a11cb;
+        background: #fff;
+    }
+
+    input[type="submit"], input[type="reset"] {
+        width: 45%;
+        padding: 12px;
+        border: none;
+        border-radius: 30px;
+        background: #6a11cb;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 10px 5px;
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+
+    input[type="submit"]:hover, input[type="reset"]:hover {
+        background: #2575fc;
+        transform: scale(1.05);
+    }
+
+    @keyframes fadeSlide {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+</head>
+<body>
+
+<form name="fl" onsubmit="return isvalid(event)">
+<h1>Information Form</h1>
+
+<b>Your Name :</b>
+<input type="text" name="n1" autofocus required>
+
+<b>Address :</b>
+<textarea name="a1" rows="4" cols="30" placeholder="Permanent Address" required></textarea>
+
+<b>Contact :</b>
+<input type="tel" name="tel1" maxlength="10" pattern="[0-9]{10}" required>
+
+<b>Email :</b>
+<input type="email" name="id" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$">
+
+<b>Password :</b>
+<input type="password" name="pass" required>
+
+<b>Confirm Password :</b>
+<input type="password" name="cpass" required>
+
+<div style="text-align:center;">
+    <input type="submit" value="SUBMIT">
+    <input type="reset" value="CLEAR">
+</div>
+
+</form>
+
+<script type="text/javascript">
+function isvalid(event) {
+    event.preventDefault();  // 👈 This stops the form from refreshing the page
+
+    var em = document.fl.id.value;
+    var ln = em.length;
+    var at = em.indexOf("@");
+    var atlast = em.lastIndexOf("@");
+    var dot = em.indexOf(".");
+    var dotlast = em.lastIndexOf(".");
+
+    if (at < 1 || atlast + 2 > ln || dotlast + 2 > ln || dot < atlast) {
+        alert("Please Enter Valid Email Address");
+        return false;
+    }
+
+    var pw = document.fl.pass.value;
+    var cpw = document.fl.cpass.value;
+
+    if (pw.length < 6) {
+        alert("Password must be at least 6 characters long");
+        return false;
+    } else if (pw !== cpw) {
+        alert("Passwords do not match");
+        return false;
+    } else {
+        alert("Login Successfully!");
+
+        // Wait 1 second, then redirect to home page
+        setTimeout(function() {
+            window.location.href = "index.html";  // 👈 Correct redirection
+        }, 1000); 
+
+        return true;
+    }
+}
+</script>
+
+</body>
+</html>

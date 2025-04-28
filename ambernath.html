@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourism - Siddhivinayak Temple</title>
+  <link rel="stylesheet" href="temp.css">
+</head>
+
+<body>
+<header class="head1">
+  <div class="logo">
+    <a href="#"><img src="logo1.jpg" alt="Logo"></a>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search...">
+    <button type="submit">🔍</button>
+  </div>
+
+  <nav class="nav1">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#">Destination</a></li>
+      <li><a href="login.html">Log In</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="cart" onclick="toggleCart()" style="cursor:pointer; position:relative;"> 🛒
+    <span id="cart-count">0</span>
+  </div>
+
+  <div id="cart-box" style="display:none; position:absolute; top:80px; right:20px; background:white; padding:20px; box-shadow:0 0 10px rgba(0,0,0,0.3); border-radius:10px; z-index:100;">
+    <h3>Cart Items:</h3>
+    <ul id="cart-items"></ul>
+    <p>Total: ₹<span id="cart-total">0</span></p>
+    <button onclick="placeOrder()" style="margin-top:10px; background:orange; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">Place Order</button>
+  </div>
+</header>
+
+<main>
+  <h1 class="main-title">SHIV MANDIR</h1>
+  <h2 class="sub-title">AMBERNATH</h2>
+
+  <div class="main-image">
+    <img src="a1.jpg" alt="SHIV MANDIR" class="img">
+  </div>
+
+  <section class="about-section">
+    <h3 class="section-title">ABOUT</h3>
+    <p>
+             The Ambernath Shiv Mandir in Maharashtra, India, is just like that! This amazing location isn’t just any temple—it transports you to the eleventh century like a time machine!
+Imagine yourself in the middle of a verdant, beautiful landscape on the banks of the Waldhuni River. The beautiful Shiv Mandir, also called the Puratana Shivalaya by the locals and the Ambreshwar Shiva Temple by some, rises before you. This guide will give you a closer look at the rich history of Ambernath Shiv Mandir.
+                <br><br>
+              According to historians, the Ambernath Shiv Mandir was built a very long time ago—roughly 1060 AD! It was constructed by the Shilahara dynasty, which at the time was akin to the royal family. There are a few different stories about who exactly built it. Some say King Chhittaraja did it himself, while others say his son Mummuni might have helped finish it.
+                <br><br>
+               There’s even a cool local legend that says the Pandavas, famous heroes from a big Indian story called the Mahabharata, built the temple while they were hiding out for a while! Regardless of its origins, the Ambernath Shiv Mandir is a powerful symbol of faith and artistry. Its construction marks a significant period in Ambernath Shiv Mandir history, showcasing the architectural prowess and religious fervour of the Shilahara era.
+                <br><br>
+              The significance of the Ambernath Shiv Mandir as the place of communion and spiritual consolation is undeniable. This river has always reminded Hindus about God, attracting people seeking prayers and blessings.During the Shivratri festival, which is the night of Lord Shiva’s worship, the temple is of the utmost importance. At this time of the year, the temple is filled with colourful celebrations, which draw hundreds of devotees to pray and participate in religious ceremonies. An interesting tip is to ensure you eat their prasad, which is offered for lunch from 12 PM to 2 PM.
+            </p>
+
+  </section>
+
+  <section class="gallery-section">
+    <h3 class="section-title">Gallery</h3>
+    <div class="gallery-images">
+      <img src="a2.jpg" alt="Gallery Image 1" class="gallery-img">
+      <video class="gallery-img" src="a1.mp4" autoplay loop muted></video>
+      <video class="gallery-img" src="a2.mp4" autoplay loop muted></video>
+      <img src="a3.jpg" alt="Gallery Image 4" class="gallery-img">
+    </div>
+  </section>
+
+  <section>
+    <h1 class="section-title">Explore Nearby Places</h1>
+    <div class="places-container">
+
+      <div class="place">
+        <h2 id="activity-line-1">Taavli Waterfall</h2>
+        <img id="activity-img-1" src="tw1.webp" alt="Taavli Waterfall">
+      </div>
+
+      <div class="place">
+        <h2 id="activity-line-2">Badlapur Chaupati</h2>
+        <img id="activity-img-2" src="tv1.avif" alt="Badlapur Chaupati">
+      </div>
+
+      <div class="place">
+        <h2 id="activity-line-3">Perrigo Waterfall</h2>
+        <img id="activity-img-3" src="tk1.jpg" alt="Perrigo Waterfall">
+      </div>
+<script>
+    // First Place Slideshow
+    const activities1 = [
+      { text: "Taavli Waterfall", img: "tw1.webp" },
+      { text: "Taavli Waterfall", img: "tw2.jpg" },
+      { text: "Taavli Waterfall", img: "tw3.jpeg" },
+	 { text: "Taavli Waterfall", img: "tw4.webp" }
+    ];
+    let index1 = 0;
+    function showActivity1() {
+      document.getElementById('activity-line-1').innerText = activities1[index1].text;
+      document.getElementById('activity-img-1').src = activities1[index1].img;
+      index1 = (index1 + 1) % activities1.length;
+      setTimeout(showActivity1, 3000);
+    }
+    showActivity1();
+
+    // Second Place Slideshow
+    const activities2 = [
+      { text: "Badlapur Chaupati", img: "b1.jpeg" },
+      { text: "Badlapur Chaupati", img: "b2.jpeg" },
+      { text: "Badlapur Chaupati", img: "b3.jpeg" },
+      { text: "Badlapur Chaupati", img: "b4.jpeg" }
+    ];
+    let index2 = 0;
+    function showActivity2() {
+      document.getElementById('activity-line-2').innerText = activities2[index2].text;
+      document.getElementById('activity-img-2').src = activities2[index2].img;
+      index2 = (index2 + 1) % activities2.length;
+      setTimeout(showActivity2, 3000);
+    }
+    showActivity2();
+
+    // Third Place Slideshow
+    const activities3 = [
+      { text: "Perrigo Waterfall", img: "p1.jpeg" },
+      { text: "Perrigo Waterfall", img: "p2.jpeg" },
+      { text: "Perrigo Waterfall", img: "p3.jpeg" },
+      { text: "Perrigo Waterfall", img: "p4.jpeg" },
+      { text: "Perrigo Waterfall", img: "p5.jpeg" }
+    ];
+    let index3 = 0;
+    function showActivity3() {
+      document.getElementById('activity-line-3').innerText = activities3[index3].text;
+      document.getElementById('activity-img-3').src = activities3[index3].img;
+      index3 = (index3 + 1) % activities3.length;
+      setTimeout(showActivity3, 3000);
+    }
+    showActivity3();
+  </script>
+    </div>
+  </section>
+
+  <section class="products">
+    <section class="product-section">
+      <h3 class="section-title">Top Products To Buy</h3>
+
+      <div class="product-gallery">
+
+        <div class="product-card">
+          <a href="#"><img src="anaras.jpeg" alt="anaras"></a>
+          <h4>Anarsa</h4>
+          <p>A traditional Maharashtrian sweet, made from rice flour and jaggery.</p>
+          <p><b>Price:</b> ₹300 per packet </p>
+          <button class="but"  onclick="addToCart('anaras', 300)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <a href="#"><img src="mp.webp " alt="Miniature paintings"></a>
+          <h4>Miniature paintings</h4>
+          <p>showing Ambernath temple art or other religious scenes.
+
+</p>
+          <p><b>Price:</b>₹700.</p>
+          <button class="but" onclick="addToCart('Miniature paintings', 700)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <a href="#"><img src="wc.jpg" alt="Wooden Carvings"></a>
+          <h4>Wooden Carvings:</h4>
+          <p>Wooden deities, especially carved figures of Lord Shiva and Nandi.</p>
+          <p><b>Price:</b> ₹2,000.</p>
+          <button class="but" onclick="addToCart('Wooden Carvings', 2000)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <a href="#"><img src="tj.avif" alt="Traditional Jewelry"></a>
+          <h4>Traditional Jewelry:</h4>
+          <p> earrings or necklaces with intricate designs inspired by Lord Shiva.</p>
+          <p><b>Price:</b> ₹3,000</p>
+          <button class="but" onclick="addToCart('Yeola Paithani ',3000)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <a href="#"><img src="hp.webp" alt="Hand-Painted Terracotta Figurines"></a>
+          <h4>Hand-Painted Terracotta Figurines</h4>
+          <p>These can include various Hindu deities
+
+</p>
+          <p><b>Price:</b>₹800 </p>
+          <button class="but" onclick="addToCart('Terracotta',800)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <a href="#"><img src="bl.webp" alt=">Brass and Copper Lanterns"></a>
+          <h4>Brass and Copper Lanterns</h4>
+          <p>decorative items that also serve as oil lamps for home use during festivals.</p>
+          <p><b>Price:</b>  ₹500 </p>
+          <button class="but" onclick="addToCart('Lanterns',500)">Buy</button>
+        </div>
+
+      </div>
+    </section>
+  </section>
+
+  <footer>
+    © 2025 Maharashtra Temples. All Rights Reserved.
+  </footer>
+
+</main>
+
+<!-- Cart Functionality Script -->
+<!-- Simple Popup Form -->
+<div id="order-form" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:white; padding:15px; border:1px solid black; border-radius:8px; z-index:1000; width:250px;">
+  <h3>Order Details</h3>
+  <form id="form">
+    <input type="text" id="name" placeholder="Name" required style="margin:5px 0; padding:5px; width:100%;">
+    <input type="text" id="address" placeholder="Address" required style="margin:5px 0; padding:5px; width:100%;">
+    <input type="text" id="phone" placeholder="Phone Number" required style="margin:5px 0; padding:5px; width:100%;">
+    <br><br>
+    <button type="submit" style="padding:5px 15px;">Submit</button>
+    <button type="button" onclick="closeForm()" style="padding:5px 15px; margin-left:10px;">Cancel</button>
+  </form>
+</div>
+
+<script>
+let cartItems = [];
+
+function addToCart(productName, price) {
+  cartItems.push({ name: productName, price: price });
+  updateCart();
+}
+
+function updateCart() {
+  const cartList = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  const cartCount = document.getElementById('cart-count');
+
+  cartList.innerHTML = '';
+
+  let total = 0;
+  cartItems.forEach((item, index) => {
+    let li = document.createElement('li');
+    li.innerHTML = `${item.name} - ₹${item.price} 
+      <button onclick="removeFromCart(${index})" style="margin-left:10px; background:red; color:white; border:none; padding:2px 8px; border-radius:5px; cursor:pointer;">X</button>`;
+    cartList.appendChild(li);
+    total += item.price;
+  });
+
+  cartTotal.innerText = total;
+  cartCount.innerText = cartItems.length;
+}
+
+function placeOrder() {
+  if (cartItems.length === 0) {
+    alert('Cart is empty! Please add products.');
+    return;
+  }
+    document.getElementById('order-form').style.display = 'block';
+}
+
+function closeForm() {
+  document.getElementById('order-form').style.display = 'none';
+}
+
+document.getElementById('form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  let name = document.getElementById('name').value.trim();
+  let address = document.getElementById('address').value.trim();
+  let phone = document.getElementById('phone').value.trim();
+
+  if (name.length < 2 || address.length < 5 || phone.length !== 10 || isNaN(phone)) {
+    alert('Please enter valid Name, Address and 10-digit Phone.');
+    return;
+  }
+
+  alert(`Thank you ${name}! Your order is placed.`);
+  cartItems = [];
+  updateCart();
+  closeForm();
+  toggleCart();
+});
+
+
+let cartVisible = false;
+function toggleCart() {
+  cartVisible = !cartVisible;
+  document.getElementById('cart-box').style.display = cartVisible ? 'block' : 'none';
+}
+function removeFromCart(index) {
+  cartItems.splice(index, 1); // Remove item from array
+  updateCart(); // Refresh the cart display
+}
+
+</script>
+
+</body>
+</html>

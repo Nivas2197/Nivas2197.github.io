@@ -1,0 +1,170 @@
+/* Reset and Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+/* Header */
+header.head1 {
+    background-color: #003366;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.search-bar input[type="text"] {
+    padding: 6px;
+    border-radius: 4px;
+    border: none;
+}
+
+.search-bar button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ff9900;
+    cursor: pointer;
+}
+
+nav.nav1 ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav.nav1 a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav.nav1 a:hover {
+    text-decoration: underline;
+}
+
+/* Main Container */
+.about-main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Section Styling */
+.about-section,
+.website-purpose,
+.features {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-section:hover,
+.website-purpose:hover,
+.features:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Headings */
+.about-section h1,
+.website-purpose h2,
+.features h2 {
+    font-size: 28px;
+    color: #003366;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.about-section h1::after,
+.website-purpose h2::after,
+.features h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #ff9900;
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+/* Paragraph and Lists */
+.about-section p,
+.website-purpose p,
+.features p,
+.website-purpose li,
+.features li {
+    font-size: 17px;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.website-purpose ul,
+.features ul {
+    padding-left: 25px;
+}
+
+/* Optional icons next to list items (CSS only) */
+.website-purpose li::before,
+.features li::before {
+    content: '✔';
+    color: #ff9900;
+    margin-right: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: #003366;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+}
+
+.footer-social {
+    margin: 15px 0;
+}
+
+.footer-social a img {
+    width: 30px;
+    margin: 0 10px;
+    vertical-align: middle;
+    transition: transform 0.2s;
+}
+
+.footer-social a img:hover {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 10px;
+}

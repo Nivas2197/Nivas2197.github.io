@@ -8,7 +8,9 @@
 </head>
 
 <body>
+<header>
 <header class="head1">
+
   <div class="logo">
     <a href="#"><img src="logo1.jpg" alt="Logo"></a>
   </div>
@@ -22,9 +24,10 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="#">Destination</a></li>
+      
+<li><a href="destination.html">Destination</a></li>
       <li><a href="login.html">LogIn</a></li>
-      <li><a href="#">Contact</a></li>
+     <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
@@ -39,10 +42,13 @@
     <button onclick="placeOrder()" style="margin-top:10px; background:orange; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">Place Order</button>
   </div>
 </header>
+</header>
 
-<main>
+<main><div style="border:groove;border-color:violet">
+
   <h1 class="main-title">SAIBABA MANDIR SHIRDI</h1>
   <h2 class="sub-title">NASHIK</h2>
+</div>
 
   <div class="main-image">
     <img src="shirdi.jpeg" alt="SAIBABA MADIR" class="img">
@@ -51,18 +57,16 @@
   <section class="about-section">
     <h3 class="section-title">ABOUT</h3>
     <p>
-              Shri Sai baba of shirdi is treated as god of all. Shirdi is considered as a sacred place for hindus and muslims.
-In the recent past all religious people including orthodox Christians, zoroastrains started worshipping Sai Baba of Shirdi.
-                <br><br>
-               Sai Baba of Shirdi, also known as Shirdi Sai Baba, was an Indian spiritual master who was regarded by his devotees as a saint, fakir, and satguru, according to their individual proclivities and beliefs. He was revered by both his Hindu and Muslim devotees, and it was uncertain if he was a Hindu or a Muslim. This, however, was of no consequence to Sai Baba. He stressed the importance of surrender to the true Satguru or Murshid, who, having trod the path to divine consciousness, will lead the disciple through the jungle of spiritual training.
-                <br><br>
-                Sai Baba is worshipped by people around the world. He had no love for perishable things and his sole concern was realization of the self.
-
-He taught a moral code of love, forgiveness, helping others, charity, contentment, inner peace, and devotion to God and guru.
-                <br><br>
-                THe gave no distinction based on religion or caste. Sai Baba’s teaching combined elements of Hinduism and Islam; he gave the Hindu name Dwarakamayi to the mosque in which he lived, practiced Muslim rituals, taught using words and figures that drew from both traditions, and was buried in Shirdi. One of his well known epigrams, “Sabka Malik Ek” (“One God governs all”), is associated with Hinduism, Islam and Sufism. He also said, “Trust in me and your prayer shall be answered.” He always uttered “Allah Malik” (“God is King”).
-            </p>
-
+      Shri Sai baba of shirdi is treated as god of all. Shirdi is considered as a sacred place for hindus and muslims.
+      In the recent past all religious people including orthodox Christians, zoroastrains started worshipping Sai Baba of Shirdi.
+      <br><br>
+      Sai Baba of Shirdi, also known as Shirdi Sai Baba, was an Indian spiritual master who was regarded by his devotees as a saint, fakir, and satguru, according to their individual proclivities and beliefs. He was revered by both his Hindu and Muslim devotees, and it was uncertain if he was a Hindu or a Muslim. This, however, was of no consequence to Sai Baba. He stressed the importance of surrender to the true Satguru or Murshid, who, having trod the path to divine consciousness, will lead the disciple through the jungle of spiritual training.
+      <br><br>
+      Sai Baba is worshipped by people around the world. He had no love for perishable things and his sole concern was realization of the self.
+      He taught a moral code of love, forgiveness, helping others, charity, contentment, inner peace, and devotion to God and guru.
+      <br><br>
+      THe gave no distinction based on religion or caste. Sai Baba’s teaching combined elements of Hinduism and Islam; he gave the Hindu name Dwarakamayi to the mosque in which he lived, practiced Muslim rituals, taught using words and figures that drew from both traditions, and was buried in Shirdi. One of his well known epigrams, “Sabka Malik Ek” (“One God governs all”), is associated with Hinduism, Islam and Sufism. He also said, “Trust in me and your prayer shall be answered.” He always uttered “Allah Malik” (“God is King”).
+    </p>
   </section>
 
   <section class="gallery-section">
@@ -93,56 +97,54 @@ He taught a moral code of love, forgiveness, helping others, charity, contentmen
         <h2 id="activity-line-3">TRIBAKESHWAR</h2>
         <img id="activity-img-3" src="tk1.jpg" alt="TRIBAKESHWAR">
       </div>
+
 <script>
-    // First Place Slideshow
-    const activities1 = [
-      { text: "Shani Shingnapur", img: "ss2.jpeg" },
-      { text: "Shani Shingnapur", img: "ss3.jpeg" },
-      { text: "Shani Shingnapur", img: "ss4.jpeg" },
-	 { text: "Shani Shingnapur", img: "ss.jpg" }
-    ];
-    let index1 = 0;
-    function showActivity1() {
-      document.getElementById('activity-line-1').innerText = activities1[index1].text;
-      document.getElementById('activity-img-1').src = activities1[index1].img;
-      index1 = (index1 + 1) % activities1.length;
-      setTimeout(showActivity1, 3000);
-    }
-    showActivity1();
+const activities1 = [
+  { text: "Shani Shingnapur", img: "ss2.jpeg" },
+  { text: "Shani Shingnapur", img: "ss3.jpeg" },
+  { text: "Shani Shingnapur", img: "ss4.jpeg" },
+  { text: "Shani Shingnapur", img: "ss.jpg" }
+];
+let index1 = 0;
+function showActivity1() {
+  document.getElementById('activity-line-1').innerText = activities1[index1].text;
+  document.getElementById('activity-img-1').src = activities1[index1].img;
+  index1 = (index1 + 1) % activities1.length;
+  setTimeout(showActivity1, 3000);
+}
+showActivity1();
 
-    // Second Place Slideshow
-    const activities2 = [
-      { text: "Tiger Valley", img: "tv1.avif" },
-      { text: "Tiger Valley", img: "tv2.jpg" },
-      { text: "Tiger Valley", img: "tv3.jpg" },
-      { text: "Tiger Valley", img: "tv4.jpg" }
-    ];
-    let index2 = 0;
-    function showActivity2() {
-      document.getElementById('activity-line-2').innerText = activities2[index2].text;
-      document.getElementById('activity-img-2').src = activities2[index2].img;
-      index2 = (index2 + 1) % activities2.length;
-      setTimeout(showActivity2, 3000);
-    }
-    showActivity2();
+const activities2 = [
+  { text: "Tiger Valley", img: "tv1.avif" },
+  { text: "Tiger Valley", img: "tv2.jpg" },
+  { text: "Tiger Valley", img: "tv3.jpg" },
+  { text: "Tiger Valley", img: "tv4.jpg" }
+];
+let index2 = 0;
+function showActivity2() {
+  document.getElementById('activity-line-2').innerText = activities2[index2].text;
+  document.getElementById('activity-img-2').src = activities2[index2].img;
+  index2 = (index2 + 1) % activities2.length;
+  setTimeout(showActivity2, 3000);
+}
+showActivity2();
 
-    // Third Place Slideshow
-    const activities3 = [
-      { text: "TRIBAKESHWAR", img: "tk1.jpg" },
-      { text: "TRIBAKESHWAR", img: "tk2.jpg" },
-      { text: "TRIBAKESHWAR", img: "tk3.webp" },
-      { text: "TRIBAKESHWAR", img: "tk4.jpg" },
-      { text: "TRIBAKESHWAR", img: "tk5.jpeg" }
-    ];
-    let index3 = 0;
-    function showActivity3() {
-      document.getElementById('activity-line-3').innerText = activities3[index3].text;
-      document.getElementById('activity-img-3').src = activities3[index3].img;
-      index3 = (index3 + 1) % activities3.length;
-      setTimeout(showActivity3, 3000);
-    }
-    showActivity3();
-  </script>
+const activities3 = [
+  { text: "TRIBAKESHWAR", img: "tk1.jpg" },
+  { text: "TRIBAKESHWAR", img: "tk2.jpg" },
+  { text: "TRIBAKESHWAR", img: "tk3.webp" },
+  { text: "TRIBAKESHWAR", img: "tk4.jpg" },
+  { text: "TRIBAKESHWAR", img: "tk5.jpeg" }
+];
+let index3 = 0;
+function showActivity3() {
+  document.getElementById('activity-line-3').innerText = activities3[index3].text;
+  document.getElementById('activity-img-3').src = activities3[index3].img;
+  index3 = (index3 + 1) % activities3.length;
+  setTimeout(showActivity3, 3000);
+}
+showActivity3();
+</script>
     </div>
   </section>
 
@@ -163,9 +165,7 @@ He taught a moral code of love, forgiveness, helping others, charity, contentmen
         <div class="product-card">
           <a href="#"><img src="saimurti.webp " alt="Warli Craft"></a>
           <h4>Sai Baba Idols and Statues:</h4>
-          <p>Beautifully hand-carved idols of Ganesh, Shiva-Parvati and Sai Baba. 
-
-</p>
+          <p>Beautifully hand-carved idols of Ganesh, Shiva-Parvati and Sai Baba.</p>
           <p><b>Price:</b> ₹1000</p>
           <button class="but" onclick="addToCart('saimurti', 1000)">Buy</button>
         </div>
@@ -189,9 +189,7 @@ He taught a moral code of love, forgiveness, helping others, charity, contentmen
         <div class="product-card">
           <a href="#"><img src="bamboo.avif" alt="Chikki"></a>
           <h4>Bamboo Items</h4>
-          <p>bamboo craft is growing big around Nashik’s outskirts.
-
-</p>
+          <p>bamboo craft is growing big around Nashik’s outskirts.</p>
           <p><b>Price:</b> ₹500 </p>
           <button class="but" onclick="addToCart('Bamboo Items', 150)">Buy</button>
         </div>
@@ -214,7 +212,7 @@ He taught a moral code of love, forgiveness, helping others, charity, contentmen
 
 </main>
 
-<!-- Cart Functionality Script -->
+!-- Cart Functionality Script -->
 <!-- Simple Popup Form -->
 <div id="order-form" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:white; padding:15px; border:1px solid black; border-radius:8px; z-index:1000; width:250px;">
   <h3>Order Details</h3>
@@ -299,6 +297,5 @@ function removeFromCart(index) {
 }
 
 </script>
-
 </body>
 </html>

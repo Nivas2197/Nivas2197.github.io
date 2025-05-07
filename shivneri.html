@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourism - Siddhivinayak Temple</title>
+  <link rel="stylesheet" href="temp.css">
+</head>
+
+<body>
+<header>
+<header class="head1">
+
+  <div class="logo">
+    <a href="#"><img src="logo1.jpg" alt="Logo"></a>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search...">
+    <button type="submit">🔍</button>
+  </div>
+
+  <nav class="nav1">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+     <li><a href="destination.html">Destination</a></li>
+      <li><a href="login.html">LogIn</a></li>
+      <li><a href="about.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="cart" onclick="toggleCart()" style="cursor:pointer; position:relative;"> 🛒
+    <span id="cart-count">0</span>
+  </div>
+
+  <div id="cart-box" style="display:none; position:absolute; top:80px; right:20px; background:white; padding:20px; box-shadow:0 0 10px rgba(0,0,0,0.3); border-radius:10px; z-index:100;">
+    <h3>Cart Items:</h3>
+    <ul id="cart-items"></ul>
+    <p>Total: ₹<span id="cart-total">0</span></p>
+    <button onclick="placeOrder()" style="margin-top:10px; background:orange; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">Place Order</button>
+  </div>
+</header>
+</header>
+
+<main><div style="border:groove;border-color:violet">
+
+  <h1 class="main-title">SHIVNERI Fort</h1>
+  <h2 class="sub-title">PUNE </h2>
+<hr color="red">
+</div>
+  <div class="main-image">
+    <img src="shivneri3.jpg" alt="" class="img">
+  </div>
+
+  <section class="about-section">
+    <h3 class="section-title">ABOUT</h3>
+    <p>
+     Shivneri Fort is an ancient military fortification located near Junnar in Pune district in Maharashtra, India. It is the birthplace of Chhatrapati Shivaji Maharaj, the founder of the Maratha Empire. The fort is situated on a hilltop that overlooks the Junnar city. It is a triangular-shaped fort with seven well-defended gates. The fort is surrounded by steep cliffs on all sides, making it difficult to attack. There are many water tanks and wells within the fort complex, which provided a steady supply of water to the fort’s inhabitants.
+      <br><br>
+   <h3 class="sub-title">History of Shivneri Fort</h3>
+ 
+The history of Shivneri Fort dates back to the 6th century. It was initially ruled by the Mauryas, and later by the Chalukyas, Rashtrakutas, and Yadavas. In the 13th century, the fort came under the control of the Delhi Sultanate. In 1430, the fort was captured by the Adil Shahi dynasty of Bijapur. In 1630, the fort was captured by the Mughal Empire. In 1674, the fort was captured by Chhatrapati Shivaji Maharaj.      <br><br>
+       <h3 class="sub-title">Significance of Shivneri Fort</h3>
+Shivneri Fort is a significant historical landmark in India. It is the birthplace of Chhatrapati Shivaji Maharaj, a great warrior and founder of the Maratha Empire. The fort is also a symbol of Maratha pride and resistance against foreign rule.      <br><br>
+      <h3 class="sub-title">Best Time to Visit Shivneri Fort</h3>
+
+The best time to visit Shivneri Fort is from October to March. During these months, the weather is pleasant and there is less rainfall.     
+</p>
+  </section>
+
+  <section class="gallery-section">
+    <h3 class="section-title">Gallery</h3>
+    <div class="gallery-images">
+      <img src="shivneri2.jpg" alt="Gallery Image 1" class="gallery-img">
+      <video class="gallery-img" src="shivneri1.mp4" autoplay loop muted></video>
+      <video class="gallery-img" src="shivneri2.mp4" autoplay loop muted></video>
+      <img src="shivneri4.webp" alt="Gallery Image 4" class="gallery-img">
+    </div>
+  </section>
+
+  <section>
+    <h1 class="section-title">Explore Nearby Places</h1>
+    <div class="places-container">
+
+      <div class="place">
+        <h2 id="activity-line-1">Lenyadri Caves</h2>
+        <img id="activity-img-1" src="lenydri1.jpg" alt="Lenyadri Caves">
+      </div>
+
+      <div class="place">
+        <h2 id="activity-line-2">Shree Vighnahar Ganpati Temple</h2>
+        <img id="activity-img-2" src="vh1.jpg" alt="Ganpati Temple">
+      </div>
+
+      <div class="place">
+        <h2 id="activity-line-3">Girijatmaka Temple</h2>
+        <img id="activity-img-3" src=gm1.jpg" alt="Girijatmaka Temple">
+      </div>
+
+<script>
+const activities1 = [
+  { text: "Lenyadri Caves", img: "lenydri1.jpg" },
+  { text: "Lenyadri Caves", img: "lenydri2.jpg" },
+  { text: "Lenyadri Caves", img: "lenydri3.jpg" },
+  { text: "Lenyadri Caves", img: "lenydri4.jpg" },
+ { text: "Lenyadri Caves", img: "lenydri5.jpg" }
+
+];
+let index1 = 0;
+function showActivity1() {
+  document.getElementById('activity-line-1').innerText = activities1[index1].text;
+  document.getElementById('activity-img-1').src = activities1[index1].img;
+  index1 = (index1 + 1) % activities1.length;
+  setTimeout(showActivity1, 3000);
+}
+showActivity1();
+
+const activities2 = [
+  { text: "Shree Vighnahar Ganpati Temple", img: "vh2.jpg" },
+  { text: "Shree Vighnahar Ganpati Temple", img: "vh3.jpg" },
+  { text: "Shree Vighnahar Ganpati Temple", img: "vh4.jpg" },
+  { text: "Shree Vighnahar Ganpati Temple", img: "vh5.jpg" },
+	{ text: "Raigad Museum", img: "vh6.jpeg" }
+];
+let index2 = 0;
+function showActivity2() {
+  document.getElementById('activity-line-2').innerText = activities2[index2].text;
+  document.getElementById('activity-img-2').src = activities2[index2].img;
+  index2 = (index2 + 1) % activities2.length;
+  setTimeout(showActivity2, 3000);
+}
+showActivity2();
+
+const activities3 = [
+  { text: "Girijatmaka Temple", img: "gm2.jpg" },
+  { text: "Girijatmaka Temple", img: "gm3.jpg" },
+  { text: "Girijatmaka Temple", img: "gm4.jpg" },
+  { text: "Girijatmaka Temple", img: "gm5.webp" },
+  { text: "Girijatmaka Temple", img: "gm6.jpg" }
+];
+let index3 = 0;
+function showActivity3() {
+  document.getElementById('activity-line-3').innerText = activities3[index3].text;
+  document.getElementById('activity-img-3').src = activities3[index3].img;
+  index3 = (index3 + 1) % activities3.length;
+  setTimeout(showActivity3, 3000);
+}
+showActivity3();
+</script>
+    </div>
+  </section>
+
+  <section class="products">
+    <section class="product-section">
+      <h3 class="section-title">Top Products To Buy</h3>
+
+      <div class="product-gallery">
+
+        <div class="product-card">
+          <img src="sma.jpg" alt="Miniature Models of Raigad Fort">
+          <h4>Miniature Models of SHIVNERI Fort:</h4>
+          <p>Handcrafted replicas of Raigad or Shivneri forts..  </p>
+          <p><b>Price:</b> ₹1000 </p>
+          <button class="but"  onclick="addToCart('Miniature Models',1000)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <img src="sms.jpg " alt="Statues">
+          <h4> Chhatrapati Shivaji Maharaj Statues</h4>
+          <p>Small statues in bronze or resin,and wooden keychains with images.</p>
+          <p><b>Price:</b> ₹700. ​</p>
+          <button class="but" onclick="addToCart('Statues', 700)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <img src="cb.webp" alt="Chitai Bangles">
+          <h4>Chitai Bangles</h4>
+          <p>
+Colorful, traditional bangles made with glass or silver. </p>
+          <p><b>Price:</b>₹50/dozen</p>
+          <button class="but" onclick="addToCart('Chitai Bangles', 50)">Buy</button>
+        </div>
+
+        <div class="product-card">
+       <img src="pcs.jpg" alt=" Craft Stores">
+          <h4>Poona Craft Stores</h4>
+          <p>raditional Maharashtrian jewelry, Kolhapuri chappals, Warli paintings.</p>
+          <p><b>Price:</b>Price: ₹2,099</p>
+          <button class="but" onclick="addToCart(' Craft Stores',50)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <img src="anudh.jpg" alt=" Aundh">
+          <h4> Aundh</h4>
+          <p>Indigenous Warli art, terracotta jewelry, durries, and other handcrafted items.</p>
+          <p><b>Price:</b> ₹2,000 </p>
+          <button class="but" onclick="addToCart('Aundh',2000)">Buy</button>
+        </div>
+
+        <div class="product-card">
+       <img src="he.webp" alt=" Handicraft">
+          <h4> Heritage Handicraft Emporium</h4>
+          <p>Wooden artifacts, sculptures, and traditional handicrafts.</p>
+          <p><b>Price:</b> ₹800 </p>
+          <button class="but" onclick="addToCart(' Handicraft',800)">Buy</button>
+        </div>
+
+      </div>
+    </section>
+  </section>
+
+  <footer>
+    © 2025 Maharashtra Temples. All Rights Reserved.
+  </footer>
+
+</main>
+
+!-- Cart Functionality Script -->
+<!-- Simple Popup Form -->
+<div id="order-form" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:white; padding:15px; border:1px solid black; border-radius:8px; z-index:1000; width:250px;">
+  <h3>Order Details</h3>
+  <form id="form">
+    <input type="text" id="name" placeholder="Name" required style="margin:5px 0; padding:5px; width:100%;">
+    <input type="text" id="address" placeholder="Address" required style="margin:5px 0; padding:5px; width:100%;">
+    <input type="text" id="phone" placeholder="Phone Number" required style="margin:5px 0; padding:5px; width:100%;">
+    <br><br>
+    <button type="submit" style="padding:5px 15px;">Submit</button>
+    <button type="button" onclick="closeForm()" style="padding:5px 15px; margin-left:10px;">Cancel</button>
+  </form>
+</div>
+
+<script>
+let cartItems = [];
+
+function addToCart(productName, price) {
+  cartItems.push({ name: productName, price: price });
+  updateCart();
+}
+
+function updateCart() {
+  const cartList = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  const cartCount = document.getElementById('cart-count');
+
+  cartList.innerHTML = '';
+
+  let total = 0;
+  cartItems.forEach((item, index) => {
+    let li = document.createElement('li');
+    li.innerHTML = `${item.name} - ₹${item.price} 
+      <button onclick="removeFromCart(${index})" style="margin-left:10px; background:red; color:white; border:none; padding:2px 8px; border-radius:5px; cursor:pointer;">X</button>`;
+    cartList.appendChild(li);
+    total += item.price;
+  });
+
+  cartTotal.innerText = total;
+  cartCount.innerText = cartItems.length;
+}
+
+function placeOrder() {
+  if (cartItems.length === 0) {
+    alert('Cart is empty! Please add products.');
+    return;
+  }
+    document.getElementById('order-form').style.display = 'block';
+}
+
+function closeForm() {
+  document.getElementById('order-form').style.display = 'none';
+}
+
+document.getElementById('form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  let name = document.getElementById('name').value.trim();
+  let address = document.getElementById('address').value.trim();
+  let phone = document.getElementById('phone').value.trim();
+
+  if (name.length < 2 || address.length < 5 || phone.length !== 10 || isNaN(phone)) {
+    alert('Please enter valid Name, Address and 10-digit Phone.');
+    return;
+  }
+
+  alert(`Thank you ${name}! Your order is placed.`);
+  cartItems = [];
+  updateCart();
+  closeForm();
+  toggleCart();
+});
+
+
+let cartVisible = false;
+function toggleCart() {
+  cartVisible = !cartVisible;
+  document.getElementById('cart-box').style.display = cartVisible ? 'block' : 'none';
+}
+function removeFromCart(index) {
+  cartItems.splice(index, 1); // Remove item from array
+  updateCart(); // Refresh the cart display
+}
+
+</script>
+</body>
+</html>
+

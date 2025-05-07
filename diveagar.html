@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourism - Fort Name</title>
+  <link rel="stylesheet" href="temp.css">
+</head>
+
+<body>
+<header>
+<header class="head1">
+
+  <div class="logo">
+    <a href="#"><img src="logo1.jpg" alt="Logo"></a>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search...">
+    <button type="submit">🔍</button>
+  </div>
+
+  <nav class="nav1">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+     <li><a href="destination.html">Destination</a></li>
+      <li><a href="login.html">LogIn</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="cart" onclick="toggleCart()" style="cursor:pointer; position:relative;"> 🛒
+    <span id="cart-count">0</span>
+  </div>
+
+  <div id="cart-box" style="display:none; position:absolute; top:80px; right:20px; background:white; padding:20px; box-shadow:0 0 10px rgba(0,0,0,0.3); border-radius:10px; z-index:100;">
+    <h3>Cart Items:</h3>
+    <ul id="cart-items"></ul>
+    <p>Total: ₹<span id="cart-total">0</span></p>
+    <button onclick="placeOrder()" style="margin-top:10px; background:orange; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">Place Order</button>
+  </div>
+</header>
+</header>
+
+<main><div style="border:groove;border-color:violet">
+  <h1 class="main-title">Diveagar Beach</h1>
+  <h2 class="sub-title">Ratnagiri</h2>
+</div>
+<hr color="red">
+  <div class="main-image">
+    <img src="diveagar.jpg" alt="" class="img" style="border:solid;border-color:blue">
+  </div>
+
+  <section class="about-section">
+    <h3 class="section-title">ABOUT</h3>
+    <p>
+  Nestled along the famous Konkan coast, Diveagar is a paradise waiting to be explored. If you’re looking for a unique experience, you should definitely tick this hidden gem off your bucket list. 
+
+Gallop on a horse along the Konkan coastline that is adorned with a glittering beach and panoramic sunset view. Enjoy thrilling water sports like parasailing and banana boat rides. On one end, you will spot fishermen at work and on the other, a flock of migratory seagulls will catch your eye. Take a break from your regular life as you step into the paradise that is Diveagar!
+      <br><br>
+   <h3 class="sub-title">Activities To Do</h3>
+ <pre>
+<p>get the best out of your trip with these activities by the beach and enjoy a worthwhile experience.
+
+
+Swimming
+Sunbathing
+Jeep Parasailing
+Banana Boat Ride
+Horse Ride
+Motor Boating
+Sunset & Sunrise views
+Visit Holy Temples.
+</p></pre>
+
+ <h3 class="sub-title">Best Time To Visit</h3>
+<p>
+The best time to visit  Diveagar  Beach is from the months of October to February. It is best to avoid visiting the beach during the monsoon season as high tides are expected during this time.
+</p>
+
+  </section>
+
+  <section class="gallery-section">
+    <h3 class="section-title">Gallery</h3>
+    <div class="gallery-images" >
+      <img src="diveagar3.jpg" alt="Gallery Image 1" class="gallery-img" style="border:solid;border-color:red">
+      <video class="gallery-img" src="beaches.mp4" autoplay loop muted style="border:solid;border-color:orange"></video >
+      <video class="gallery-img" src="diveagar.mp4" autoplay loop muted style="border:solid;border-color:green"></video>
+      <img src="daT.png" alt="Gallery Image 4" class="gallery-img" style="border:solid;border-color:blue">
+    </div>
+  </section>
+
+  <section>
+    <h1 class="section-title">Explore Nearby Places</h1>
+    <div class="places-container">
+
+      <div class="place">
+        <h2 id="activity-line-1">Bankot Fort  </h2>
+        <img id="activity-img-1" src="bankot1.jpg" alt="Nearby Place 1">
+      </div>
+
+      <div class="place">
+        <h2 id="activity-line-2"> Harihareshwar Temple </h2>
+        <img id="activity-img-2" src="hri1.png" alt="Nearby Place 2">
+      </div>
+
+      <div class="place">
+        <h2 id="activity-line-3">Phansad Wildlife Sanctuary</h2>
+        <img id="activity-img-3" src="gilb1.jpg" alt="Nearby Place 3">
+      </div>
+
+<script>
+const activities1 = [
+  { text: "ISKCON Temple",
+img: "it1.jpg" },
+  { text: "Bankot Fort ", img: "bankot2.jpeg" },
+  { text: "Bankot Fort ", img: "bankot3.webp" },
+  { text: "Bankot Fort ", img: "bankot4.webp" },
+  { text: "Bankot Fort ", img: "bankot5.jpg" }
+];
+let index1 = 0;
+function showActivity1() {
+  document.getElementById('activity-line-1').innerText = activities1[index1].text;
+  document.getElementById('activity-img-1').src = activities1[index1].img;
+  index1 = (index1 + 1) % activities1.length;
+  setTimeout(showActivity1, 3000);
+}
+showActivity1();
+
+const activities2 = [
+  { text: "Harihareshwar Temple", img: "hri1.png" },
+  { text: "Harihareshwar Temple", img: "hri5.webp" },
+  { text: "Harihareshwar Temple", img: "hri3.jpg" },
+  { text: "Harihareshwar Temple", img: "hri4.jpg" },
+  { text: "Harihareshwar Temple", img: "hri6.jpg" }
+];
+let index2 = 0;
+function showActivity2() {
+  document.getElementById('activity-line-2').innerText = activities2[index2].text;
+  document.getElementById('activity-img-2').src = activities2[index2].img;
+  index2 = (index2 + 1) % activities2.length;
+  setTimeout(showActivity2, 3000);
+}
+showActivity2();
+const activities3 = [
+  { text: "Gilbert Hill", img: "gilb2.jpg" },
+  { text: "Gilbert Hill", img: "gilb3.jpg" },
+  { text: "Gilbert Hill", img: "gilb4.avif" },
+  { text: "Gilbert Hill", img: "gilb5.jpg" },
+  { text: "Gilbert Hill", img: "gilb6.jpg" }
+];
+let index3 = 0;
+function showActivity3() {
+  document.getElementById('activity-line-3').innerText = activities3[index3].text;
+  document.getElementById('activity-img-3').src = activities3[index3].img;
+  index3 = (index3 + 1) % activities3.length;
+  setTimeout(showActivity3, 3000);
+}
+showActivity3();
+</script>
+    </div>
+  </section>
+
+  <section class="products">
+    <section class="product-section">
+      <h3 class="section-title">Top Products To Buy</h3>
+
+      <div class="product-gallery">
+
+        <div class="product-card">
+          <img src="ganesh.avif" alt="Product 1">
+          <h4>Ganesh motifs </h4>
+          <p>Items featuring Ganesh motifs,inspired by the Suvarna Ganesh Temple</p>
+          <p><b>Price:</b>₹285</p>
+          <button class="but"  onclick="addToCart('Ganesh motifs',285)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <img src="palm.jpeg" alt="Statue">
+          <h4>Palm Leaf Bags or Hats</h4>
+          <p>Items made from palm leaves, reflecting the coastal heritage of the Konkan.</p>
+          <p><b>Price:</b>₹1000</p>
+          <button class="but" onclick="addToCart('Leaf Bags or Hat',1000)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <img src="karvanda.webp" alt="Coconut Crafts">
+          <h4>Karvanda (wild berry)</h4>
+          <p>Carved keychains, miniature sculptures,décor from coconut shells.</p>
+          <p><b>Price:</b>₹590 for 220 grams</p>
+          <button class="but" onclick="addToCart('Karvanda',590)">Buy</button>
+        </div>
+
+      </div>
+    </section>
+  </section>
+
+  <footer>
+    © 2025 Maharashtra Temples. All Rights Reserved.
+  </footer>
+
+</main>
+
+<!-- Order Form Popup -->
+<div id="order-form" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:white; padding:15px; border:1px solid black; border-radius:8px; z-index:1000; width:250px;">
+  <h3>Order Details</h3>
+  <form id="form">
+    <input type="text" id="name" placeholder="Name" required style="margin:5px 0; padding:5px; width:100%;">
+    <input type="text" id="address" placeholder="Address" required style="margin:5px 0; padding:5px; width:100%;">
+    <input type="text" id="phone" placeholder="Phone Number" required style="margin:5px 0; padding:5px; width:100%;">
+    <br><br>
+    <button type="submit" style="padding:5px 15px;">Submit</button>
+    <button type="button" onclick="closeForm()" style="padding:5px 15px; margin-left:10px;">Cancel</button>
+  </form>
+</div>
+
+<script>
+let cartItems = [];
+
+function addToCart(productName, price) {
+  cartItems.push({ name: productName, price: price });
+  updateCart();
+}
+
+function updateCart() {
+  const cartList = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  const cartCount = document.getElementById('cart-count');
+
+  cartList.innerHTML = '';
+
+  let total = 0;
+  cartItems.forEach((item, index) => {
+    let li = document.createElement('li');
+    li.innerHTML = `${item.name} - ₹${item.price} 
+      <button onclick="removeFromCart(${index})" style="margin-left:10px; background:red; color:white; border:none; padding:2px 8px; border-radius:5px; cursor:pointer;">X</button>`;
+    cartList.appendChild(li);
+    total += item.price;
+  });
+
+  cartTotal.innerText = total;
+  cartCount.innerText = cartItems.length;
+}
+
+function placeOrder() {
+  if (cartItems.length === 0) {
+    alert('Cart is empty! Please add products.');
+    return;
+  }
+    document.getElementById('order-form').style.display = 'block';
+}
+
+function closeForm() {
+  document.getElementById('order-form').style.display = 'none';
+}
+
+document.getElementById('form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  let name = document.getElementById('name').value.trim();
+  let address = document.getElementById('address').value.trim();
+  let phone = document.getElementById('phone').value.trim();
+
+  if (name.length < 2 || address.length < 5 || phone.length !== 10 || isNaN(phone)) {
+    alert('Please enter valid Name, Address and 10-digit Phone.');
+    return;
+  }
+
+  alert(`Thank you ${name}! Your order is placed.`);
+  cartItems = [];
+  updateCart();
+  closeForm();
+  toggleCart();
+});
+
+
+let cartVisible = false;
+function toggleCart() {
+  cartVisible = !cartVisible;
+  document.getElementById('cart-box').style.display = cartVisible ? 'block' : 'none';
+}
+function removeFromCart(index) {
+  cartItems.splice(index, 1); // Remove item from array
+  updateCart(); // Refresh the cart display
+}
+
+</script>
+</body>
+</html>

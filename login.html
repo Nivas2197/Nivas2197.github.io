@@ -2,81 +2,84 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Javascript Validation Program</title>
+<title>JavaScript Validation Form</title>
 
 <style>
     body {
-        background: linear-gradient(120deg, #74ebd5, #acb6e5);
-        font-family: 'Poppins', sans-serif;
-        min-height: 100vh;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(to right, #f4f7fa, #e8ecf1);
         display: flex;
         align-items: center;
         justify-content: center;
+        min-height: 100vh;
         margin: 0;
     }
 
     form {
-        background: rgba(255, 255, 255, 0.9);
-        padding: 30px 40px;
-        border-radius: 20px;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        animation: fadeSlide 1s ease forwards;
+        background: #fff;
+        padding: 28px 35px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         width: 100%;
-        max-width: 450px;
+        max-width: 420px;
     }
 
     h1 {
         text-align: center;
-        color: #333;
+        font-size: 22px;
         margin-bottom: 20px;
+        color: #333;
     }
 
-    input[type="text"], input[type="tel"], input[type="email"], input[type="password"], textarea {
+    label {
+        font-size: 14px;
+        margin-bottom: 5px;
+        display: block;
+        color: #444;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
         width: 100%;
-        padding: 12px;
-        margin: 10px 0 20px 0;
-        border: 2px solid #ccc;
-        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+        background: #fdfdfd;
+        transition: border-color 0.3s;
+    }
+
+    input:focus, textarea:focus {
+        border-color: #4c9ed9;
         outline: none;
-        transition: all 0.4s ease;
-        font-size: 16px;
-        background: #f9f9f9;
     }
 
-    input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
-        border-color: #6a11cb;
-        box-shadow: 0 0 8px #6a11cb;
-        background: #fff;
-    }
-
-    input[type="submit"], input[type="reset"] {
-        width: 45%;
-        padding: 12px;
+    input[type="submit"],
+    input[type="reset"] {
+        width: 48%;
+        padding: 10px;
+        font-size: 14px;
         border: none;
-        border-radius: 30px;
-        background: #6a11cb;
+        border-radius: 6px;
+        background: #4c9ed9;
         color: white;
-        font-size: 16px;
         font-weight: bold;
-        margin: 10px 5px;
+        margin: 5px 1%;
         cursor: pointer;
-        transition: all 0.4s ease;
+        transition: background 0.3s ease;
     }
 
-    input[type="submit"]:hover, input[type="reset"]:hover {
-        background: #2575fc;
-        transform: scale(1.05);
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+        background: #3a87c7;
     }
 
-    @keyframes fadeSlide {
-        0% {
-            opacity: 0;
-            transform: translateY(-50px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    div {
+        text-align: center;
     }
 </style>
 
@@ -84,36 +87,35 @@
 <body>
 
 <form name="fl" onsubmit="return isvalid(event)">
-<h1>Information Form</h1>
+    <h1>Information Form</h1>
 
-<b>Your Name :</b>
-<input type="text" name="n1" autofocus required>
+    <label>Your Name:</label>
+    <input type="text" name="n1" required autofocus>
 
-<b>Address :</b>
-<textarea name="a1" rows="4" cols="30" placeholder="Permanent Address" required></textarea>
+    <label>Address:</label>
+    <textarea name="a1" rows="4" placeholder="Permanent Address" required></textarea>
 
-<b>Contact :</b>
-<input type="tel" name="tel1" maxlength="10" pattern="[0-9]{10}" required>
+    <label>Contact:</label>
+    <input type="tel" name="tel1" maxlength="10" pattern="[0-9]{10}" required>
 
-<b>Email :</b>
-<input type="email" name="id" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$">
+    <label>Email:</label>
+    <input type="email" name="id" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$">
 
-<b>Password :</b>
-<input type="password" name="pass" required>
+    <label>Password:</label>
+    <input type="password" name="pass" required>
 
-<b>Confirm Password :</b>
-<input type="password" name="cpass" required>
+    <label>Confirm Password:</label>
+    <input type="password" name="cpass" required>
 
-<div style="text-align:center;">
-    <input type="submit" value="SUBMIT">
-    <input type="reset" value="CLEAR">
-</div>
-
+    <div>
+        <input type="submit" value="SUBMIT">
+        <input type="reset" value="CLEAR">
+    </div>
 </form>
 
-<script type="text/javascript">
+<script>
 function isvalid(event) {
-    event.preventDefault();  // 👈 This stops the form from refreshing the page
+    event.preventDefault();
 
     var em = document.fl.id.value;
     var ln = em.length;
@@ -138,12 +140,9 @@ function isvalid(event) {
         return false;
     } else {
         alert("Login Successfully!");
-
-        // Wait 1 second, then redirect to home page
         setTimeout(function() {
-            window.location.href = "index.html";  // 👈 Correct redirection
-        }, 1000); 
-
+            window.location.href = "index.html";
+        }, 1000);
         return true;
     }
 }

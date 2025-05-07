@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourism - Siddhivinayak Temple</title>
+  <link rel="stylesheet" href="temp.css">
+</head>
+
+<body>
+<header>
+<header class="head1">
+
+  <div class="logo">
+    <a href="#"><img src="logo1.jpg" alt="Logo"></a>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search...">
+    <button type="submit">🔍</button>
+  </div>
+
+  <nav class="nav1">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+     <li><a href="destination.html">Destination</a></li>
+      <li><a href="login.html">LogIn</a></li>
+      <li><a href="about.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="cart" onclick="toggleCart()" style="cursor:pointer; position:relative;"> 🛒
+    <span id="cart-count">0</span>
+  </div>
+
+  <div id="cart-box" style="display:none; position:absolute; top:80px; right:20px; background:white; padding:20px; box-shadow:0 0 10px rgba(0,0,0,0.3); border-radius:10px; z-index:100;">
+    <h3>Cart Items:</h3>
+    <ul id="cart-items"></ul>
+    <p>Total: ₹<span id="cart-total">0</span></p>
+    <button onclick="placeOrder()" style="margin-top:10px; background:orange; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">Place Order</button>
+  </div>
+</header>
+</header>
+
+<main><div style="border:groove;border-color:violet">
+
+  <h1 class="main-title">Raigad Fort</h1>
+  <h2 class="sub-title">Mahad </h2>
+</div>
+
+  <div class="main-image">
+    <img src="raigad9.jpg" alt="" class="img">
+  </div>
+
+  <section class="about-section">
+    <h3 class="section-title">ABOUT</h3>
+    <p>
+      Raigad Fort was the capital of the Maratha Empire from 1674 to 1818. It is located on a hilltop in the Sahyadri Mountains and is considered to be one of the most important forts in Indian history. The fort is well-preserved and offers stunning views of the surrounding countryside.
+
+Raigad Fort*, also known as Rairi or Rairy Fort, is a magnificent hill fort situated in the Sahyadri mountain range, overlooking the town of Mahad in the Raigad district of Maharashtra, India. Standing tall at an elevation of 2,700 feet (820 meters) above its base and 4,449 feet (1,356 meters) above sea level, Raigad Fort offers breathtaking panoramic views of the surrounding landscape. Its strategic location and formidable defenses made it one of the strongest fortresses on the Deccan Plateau.
+      <br><br>
+   <h3 class="sub-title">Historical Significance</h3>
+ 
+Raigad Fort holds immense historical significance as it served as the capital of the Maratha Empire under the legendary Chhatrapati Shivaji Maharaj. In 1674, Shivaji was crowned the king of the Maratha kingdom, and Raigad Fort became the center of his administrative and military operations. During his reign, the Maratha Empire flourished and expanded considerably, reaching a significant portion of western and central India..
+      <br><br>
+       <h3 class="sub-title">Architectural Features</h3>
+Raigad Fort is a testament to the architectural brilliance of the Maratha era. Its construction was overseen by Shivaji himself, alongside his chief engineer, Hiroji Indulkar. The fort’s layout is strategically designed to maximize its defensive capabilities, with multiple layers of fortification, bastions, and gateways.
+      <br><br>
+      <h3 class="sub-title">Accessing Raigad Fort</h3>
+
+Reaching Raigad Fort requires a bit of effort, but the rewards are well worth the climb. Visitors can choose to ascend approximately 1,737 steps, offering a scenic and invigorating experience. Alternatively, a convenient option is the Raigad Ropeway, an aerial tramway spanning 2,460 feet (750 meters) in length, transporting visitors to the fort in just four minutes.
+ <br><br>
+
+<h3 class="sub-title">Visiting Hours</h3>
+Raigad Fort remains open for visitors from 9:00 AM to 5:00 PM throughout the year. The best time to visit is during the cooler months, from October to March, when the weather is pleasant and the views are particularly stunning.
+    </p>
+  </section>
+
+  <section class="gallery-section">
+    <h3 class="section-title">Gallery</h3>
+    <div class="gallery-images">
+      <img src="raigad4.jpeg" alt="Gallery Image 1" class="gallery-img">
+      <video class="gallery-img" src="raigad1.mp4" autoplay loop muted></video>
+      <video class="gallery-img" src="raigad2.mp4" autoplay loop muted></video>
+      <img src="raigad7.jpeg" alt="Gallery Image 4" class="gallery-img">
+    </div>
+  </section>
+
+  <section>
+    <h1 class="section-title">Explore Nearby Places</h1>
+    <div class="places-container">
+
+      <div class="place">
+        <h2 id="activity-line-1">TAKMAK TOK</h2>
+        <img id="activity-img-1" src="takmak.jpg" alt="TAKMAK TOK">
+      </div>
+
+      <div class="place">
+        <h2 id="activity-line-2">Raigad Museum</h2>
+        <img id="activity-img-2" src="rm1.jpg" alt="Raigad Museum">
+      </div>
+
+      <div class="place">
+        <h2 id="activity-line-3">Diveagar Beach</h2>
+        <img id="activity-img-3" src="diveagar.jpg" alt="Diveagar Beach">
+      </div>
+
+<script>
+const activities1 = [
+  { text: "TAKMAK TOK", img: "takmak.jpeg" },
+  { text: "TAKMAK TOK", img: "takmak.jpg" },
+  { text: "TAKMAK TOK", img: "takmak2.jpg" },
+  { text: "TAKMAK TOK", img: "takmak3.jpg" },
+ { text: "TAKMAK TOK", img: "takmak4.jpg" }
+
+];
+let index1 = 0;
+function showActivity1() {
+  document.getElementById('activity-line-1').innerText = activities1[index1].text;
+  document.getElementById('activity-img-1').src = activities1[index1].img;
+  index1 = (index1 + 1) % activities1.length;
+  setTimeout(showActivity1, 3000);
+}
+showActivity1();
+
+const activities2 = [
+  { text: "Raigad Museum", img: "rm1.jpg" },
+  { text: "Raigad Museum", img: "rm2.jpg" },
+  { text: "Raigad Museum", img: "rm3.jpeg" },
+  { text: "Raigad Museum", img: "rm4.jpg" },
+	{ text: "Raigad Museum", img: "rm5.jpg" }
+];
+let index2 = 0;
+function showActivity2() {
+  document.getElementById('activity-line-2').innerText = activities2[index2].text;
+  document.getElementById('activity-img-2').src = activities2[index2].img;
+  index2 = (index2 + 1) % activities2.length;
+  setTimeout(showActivity2, 3000);
+}
+showActivity2();
+
+const activities3 = [
+  { text: "Diveagar Beach", img: "diveagar.jpg" },
+  { text: "Diveagar Beach", img: "diveagar2.jpeg" },
+  { text: "Diveagar Beach", img: "diveagar3.jpg" },
+  { text: "Diveagar Beach", img: "diveagar4.jpg" },
+  { text: "Diveagar Beach", img: "diveagar5.jpg" }
+];
+let index3 = 0;
+function showActivity3() {
+  document.getElementById('activity-line-3').innerText = activities3[index3].text;
+  document.getElementById('activity-img-3').src = activities3[index3].img;
+  index3 = (index3 + 1) % activities3.length;
+  setTimeout(showActivity3, 3000);
+}
+showActivity3();
+</script>
+    </div>
+  </section>
+
+  <section class="products">
+    <section class="product-section">
+      <h3 class="section-title">Top Products To Buy</h3>
+
+      <div class="product-gallery">
+
+        <div class="product-card">
+          <img src="rmm1.jpg" alt="Miniature Models of Raigad Fort">
+          <h4>Miniature Models of Raigad Fort:</h4>
+          <p>Miniature replicas of Raigad Fort are popular among visitors.  </p>
+          <p><b>Price:</b>  ₹349 </p>
+          <button class="but"  onclick="addToCart('"Miniature Models', 349)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <a href="#"><img src="fmr.jpeg " alt="Fridge Magnets"></a>
+          <h4> Fridge Magnets</h4>
+          <p>Fridge magnets featuring images of Raigad Fort are a common souvenir.</p>
+          <p><b>Price:</b> ₹199. ​</p>
+          <button class="but" onclick="addToCart('Fridge Magnets',199. ​)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <img src="warlicraft.avif" alt="Warli Paintings">
+          <h4>Warli Paintings</h4>
+          <p>
+ Warli paintings depict daily life and nature through geometric patterns. </p>
+          <p><b>Price:</b> ₹2,000</p>
+          <button class="but" onclick="addToCart('Warli Paintings', 2000)">Buy</button>
+        </div>
+
+        <div class="product-card">
+       <img src="chitari.webp" alt="Chitari Bangles">
+          <h4>Chitari Bangles</h4>
+          <p>Colorful and traditional, Chitari bangles are a staple of Maharashtrian jewelry.</p>
+          <p><b>Price:</b>Price: ₹2,099 (single bangle</p>
+          <button class="but" onclick="addToCart('Chitari Bangles',2099)">Buy</button>
+        </div>
+
+        <div class="product-card">
+          <img src="masala.jpg" alt=" Local Spices and Masala">
+          <h4> Local Spices and Masalas</h4>
+          <p>bamboo craft is growing big around Nashik’s outskirts.</p>
+          <p><b>Price:</b>  ₹800 </p>
+          <button class="but" onclick="addToCart(' Masala', 800 ">Buy</button>
+        </div>
+
+        <div class="product-card">
+       <img src="ha.webp" alt="Wooden Artifacts">
+          <h4> Handicrafts and Wooden Artifacts</h4>
+          <p>Local markets around Raigad Fort offer a variety of handcrafted items</p>
+          <p><b>Price:</b> ₹500 </p>
+          <button class="but" onclick="addToCart('Wooden Artifacts', 500)">Buy</button>
+        </div>
+
+      </div>
+    </section>
+  </section>
+
+  <footer>
+    © 2025 Maharashtra Temples. All Rights Reserved.
+  </footer>
+
+</main>
+
+<div id="order-form" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:white; padding:15px; border:1px solid black; border-radius:8px; z-index:1000; width:250px;">
+  <h3>Order Details</h3>
+  <form id="form">
+    <input type="text" id="name" placeholder="Name" required style="margin:5px 0; padding:5px; width:100%;">
+    <input type="text" id="address" placeholder="Address" required style="margin:5px 0; padding:5px; width:100%;">
+    <input type="text" id="phone" placeholder="Phone Number" required style="margin:5px 0; padding:5px; width:100%;">
+    <br><br>
+    <button type="submit" style="padding:5px 15px;">Submit</button>
+    <button type="button" onclick="closeForm()" style="padding:5px 15px; margin-left:10px;">Cancel</button>
+  </form>
+</div>
+
+<script>
+let cartItems = [];
+
+function addToCart(productName, price) {
+  cartItems.push({ name: productName, price: price });
+  updateCart();
+}
+
+function updateCart() {
+  const cartList = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  const cartCount = document.getElementById('cart-count');
+
+  cartList.innerHTML = '';
+
+  let total = 0;
+  cartItems.forEach((item, index) => {
+    let li = document.createElement('li');
+    li.innerHTML = `${item.name} - ₹${item.price} 
+      <button onclick="removeFromCart(${index})" style="margin-left:10px; background:red; color:white; border:none; padding:2px 8px; border-radius:5px; cursor:pointer;">X</button>`;
+    cartList.appendChild(li);
+    total += item.price;
+  });
+
+  cartTotal.innerText = total;
+  cartCount.innerText = cartItems.length;
+}
+
+function placeOrder() {
+  if (cartItems.length === 0) {
+    alert('Cart is empty! Please add products.');
+    return;
+  }
+    document.getElementById('order-form').style.display = 'block';
+}
+
+function closeForm() {
+  document.getElementById('order-form').style.display = 'none';
+}
+
+document.getElementById('form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  let name = document.getElementById('name').value.trim();
+  let address = document.getElementById('address').value.trim();
+  let phone = document.getElementById('phone').value.trim();
+
+  if (name.length < 2 || address.length < 5 || phone.length !== 10 || isNaN(phone)) {
+    alert('Please enter valid Name, Address and 10-digit Phone.');
+    return;
+  }
+
+  alert(`Thank you ${name}! Your order is placed.`);
+  cartItems = [];
+  updateCart();
+  closeForm();
+  toggleCart();
+});
+
+
+let cartVisible = false;
+function toggleCart() {
+  cartVisible = !cartVisible;
+  document.getElementById('cart-box').style.display = cartVisible ? 'block' : 'none';
+}
+function removeFromCart(index) {
+  cartItems.splice(index, 1); // Remove item from array
+  updateCart(); // Refresh the cart display
+}
+
+</script>
+</body>
+</html>
+

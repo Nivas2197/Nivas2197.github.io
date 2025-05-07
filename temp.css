@@ -121,11 +121,11 @@ body {
 
 .sub-title {
   text-align: center;
-  color: #b71c1c;
+  color: #1b5e20;
   font-size: 2rem;
   margin-bottom: 20px;
   letter-spacing: 2px;
-  text-shadow: 0 0 8px rgba(255, 102, 0, 0.7);
+  text-shadow: 0 0 8px rgba(183, 28, 28, 0.7);
 }
 
 /* Main Image */
